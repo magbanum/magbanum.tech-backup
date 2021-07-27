@@ -11,54 +11,54 @@ For this tutorial, we will be using my project called "One for all Blogging plat
 
 %[https://github.com/magbanum/oneforall-blog/]
 
-In this project, I have created an app named ```blog``` which has the function-based view "newsview" with the following code,
+In this project, I have created an app named ```blog``` which has the function-based view "HashnodeView" with the following code,
 ```
 blog/views.py
 
-def newsview(request):
-    blogs = get_news()
-    return render(request, 'blog/news_posts.html',{'blogs':blogs})```
-The ```newsview``` function collects data from another function and passes it to template named ```news_posts.html``` and then template displays that data. The HTML code looks like this.
+def HashnodeView(request):
+    posts = get_hashnode_blogs()
+    return render(request, 'blog/news_posts.html',{'posts':posts})```
+The ```HashnodeView``` function collects data from another function and passes it to template named ```hashnode_posts.html``` and then template displays that data. The HTML code looks like this.
 ``` 
-blog/template/blog/news_posts.html
+blog/template/blog/hashnode_posts.html
 
- {% for blog in blogs %}
+ {% for post in posts %}
   <div class="col">
         ....
-        <h5 class="mb-1">{{ blog.title }}</h5>
+        <h5 class="mb-1">{{ post.title }}</h5>
         ....
   </div>
 {% endfor %}```
 
-Currently, the ```newsview``` and the ```news_posts.html``` template displays all the items stored in the blogs on a single page. So we need to add some code to paginate the items.
+Currently, the ```HashnodeView``` and the ```hashnode_posts.html``` template displays all the items stored in the ```posts``` on a single page. That looks very crowded and lengthy. So we need to add some code to paginate these items.
 
 Let's first import the ```Paginator``` using the following line of code.
 ```
 from django.core.paginator import Paginator```
 
-In function-based views, we need to specify the data which we want to paginate and the number of items by which we want to paginate the data. For the ```newsview``` we want to paginate the contents of ```blogs``` by 6 items. Also, in the previous code, we returned the ```blogs``` to the template but now we will need to return paginated data that is ```page_obj```. The final code will become,
+**In function-based views**, we need to specify the data and the number of items by which we want to paginate this data. For the ```HashnodeView``` we want to paginate the contents of ```posts``` by 9 items. Also, in the previous code, we returned the ```posts``` to the template but now we will need to return paginated data that is ```page_obj```. The final code will become,
 
 Project directory: [blog/views.py](https://github.com/magbanum/oneforall-blog/blob/main/blog/views.py)
 ```
 from django.core.paginator import Paginator
 
-def newsview(request):
-    blogs = get_news()
-    paginator = Paginator(blogs, 6)
+def HashnodeView(request):
+    posts = get_hashnode_blogs(1)
+    paginator = Paginator(posts, 9)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    return render(request, 'blog/news_posts.html',{'page_obj':page_obj})```
+    return render(request, 'blog/hashnode_posts.html', {'page_obj': page_obj})```
 
-Now  that we have paginated the data successfully we need to display it in our ```news_posts.html```
+Now  that we have paginated the data successfully we need to display it in our ```hashnode_posts.html```
 template. Also, we have to add a navigation panel for the visitors to navigate between the pages. But not to worry, there are few lines of code to include simple navigation with the links for the first, previous, next and last page. So the final template will look like this,
 
-Project directory: [blog/template/blog/news_posts.html](https://github.com/magbanum/oneforall-blog/blob/main/blog/templates/blog/news_posts.html)
+Project directory: [blog/template/blog/hashnode_posts.html](https://github.com/magbanum/oneforall-blog/blob/main/blog/templates/blog/hashnode_posts.html)
 ```
-{% for blog in page_obj %}
+{% for posts in page_obj %}
   <div class="col">
         ....
-        <h5 class="mb-1">{{ blog.title }}</h5>
+        <h5 class="mb-1">{{ post.title }}</h5>
         ....
   </div>
 {% endfor %}
@@ -101,7 +101,7 @@ class HomeView(ListView):
     template_name = 'blog/home.html'
     ordering = ['-post_date']```
 
-The remaining steps are the same as in the function-based view. We can add navigation links just like we did with our ```newsview```. You can see the code for template ```home.html```  [here](https://github.com/magbanum/oneforall-blog/blob/main/blog/templates/blog/home.html). 
+The remaining steps are the same as in the function-based view. We can add navigation links just like we did with our ```HashnodeView```. You can see the code for template ```home.html```  [here](https://github.com/magbanum/oneforall-blog/blob/main/blog/templates/blog/home.html). 
 
 Visit the One for all Blogging platform at https://oneforall-blog.herokuapp.com/ to see the working of our code.
 
