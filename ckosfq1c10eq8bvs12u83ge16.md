@@ -146,6 +146,6 @@ This look really clean and personalized. Try printing out bunch of other things 
 
 We have successfully created a query in GraphQL, used it in our Python program, created the function to run the query, and got the expected results. This concludes the tutorial, and I hope you were able to use Hashnode APIs in your python programs. 
 
-As a next step, you can add user Input to get the username for more personalized results. Visit the  [GitHub repo](https://github.com/magbanum/python-codes/blob/master/hashnode_test.py)  for this code.
+As a next step, you can add user Input to get the username for more personalized results. Visit the  [GitHub repo](https://github.com/magbanum/python-codes/tree/master/Using%20Hashnode%20api%20in%20Python)  for this code.
 
 I hope the above information was helpful to you. Please comment if you are facing trouble with the above code, I will try my best to fix it. And follow me on Hashnode for more such tutorials.
