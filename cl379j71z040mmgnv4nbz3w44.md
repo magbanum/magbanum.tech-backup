@@ -6,7 +6,7 @@ It's been a while since I uploaded my last article. I would love to tell you tha
 
 In this article, we are going to create a simple Django application called PhotoGallery where image uploads are handled by Cloudinary. The main focus of this article is to know how to integrate Cloudinary with Django models.
 
-# Cloudinary
+### Cloudinary
 > The company provides cloud-based image and video management services. It enables users to upload, store, manage, manipulate, and deliver images and videos for websites and apps. [Wikipedia](https://en.wikipedia.org/wiki/Cloudinary)
 
 Overall, I have been using Cloudinary for a long time and would recommend it to developers who not only want to store images and videos but wants to optimise them for websites and apps.
