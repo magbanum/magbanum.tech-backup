@@ -61,7 +61,7 @@ CLOUDINARY = {
 }
 ```
 
-### Create a Model to store images
+### Create a Model to store photos
 
 We will create a Model named **Photo** with fields like image, alt and upload date. But you are free to add a few extra fields like tags and image descriptions.
 
@@ -109,7 +109,7 @@ Try to upload a few images and with successful submission of the form, you shoul
 
 You can see that the image is saved in link form and not the image directly. I will show you how to access this image in the template later in the tutorial.
 
-### Create a form
+### Create a form to upload photos
 
 Let's create a simple form to upload images directly from the homepage. forms.py is not created by default so you will need to create it in the app directory. You can do a lot more with the Django forms than we did in this tutorial. Check out [Django documentation](https://docs.djangoproject.com/en/4.0/ref/forms/) to know more about Django forms.
 
@@ -126,7 +126,7 @@ class PhotoForm(ModelForm):
       fields = ['image', 'alt']
 ```
 
-### Create a class-based-views
+### Create a class-based view
 
 We are creating a class-based view that inherits Django's generic view called CreateView. We are using CreateView instead of ListView because we are passing objects as well as a form in the same view and using ListView does not allow us to render the form correctly. We have passed the Photo model, PhotoForm and a home.html template to the PhotoList view. Don't worry, we are going to create this simple template later in this tutorial.
 ```
@@ -168,7 +168,7 @@ urlpatterns = [
 
 ### Create a template for the homepage
 
-This is the second last step of our tutorial. We need a template to show our photos and the PhotoForm to upload photos with alt names. We have already defined the template name in View as ```home.html``` so we will create the same in a new directory ```gallery/templates/gallery/home.html``` and add the following code.
+This is the last step of our tutorial. We need a template to show our photos and the PhotoForm to upload photos with alt names. We have already defined the template name in View as ```home.html``` so we will create the same in a new directory ```gallery/templates/gallery/home.html``` and add the following code.
 
 ```
 ./gallery/templates/gallery/home.html
@@ -214,12 +214,14 @@ After the photo gallery, we have a simple form to upload photos. And the final a
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1652613798537/RpQs4C9Hsx.png align="center")
 
-And that's it, but you can not and should not stop here especially if you are a beginner. Dig deeper, check out the Django documentation and add extra features and functionalities to your application. For example, you can add authentication required for forms to restrict others from uploading photos to your gallery.
+And that's it, but you can not and should not stop here especially if you are a beginner. Dig deeper, check out the Django documentation and add extra features and functionalities to your application. For example, you can add authentication required for forms to restrict others from uploading photos to your gallery. Check out the GitHub repository for the source code of this project.
+
+%[https://github.com/magbanum/photogallery/]
 
 As I said earlier, the main focus of this article was to know how cloudinary can help us manage image uploads efficiently, hassle-free and without much integration process. All we needed is credentials and a cloudinaryField. And the bonus is that Cloudinary not only delivers the images but at the same time optimizes them. Which helps your application load faster.
 
 I hope you found this article helpful. Please let me know if I did something wrong in this article or have any doubt regarding any step. I will be happy to help you with my knowledge and understanding.
 
-Thanks for reading.
+Thanks for reading.🌻
 
 > Be better than yesterday's you!
