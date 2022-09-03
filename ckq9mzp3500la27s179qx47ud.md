@@ -1,7 +1,9 @@
 ## Pagination in Django.
 
-Pagination is the process of splitting the contents of a website, or a section of contents from a website, into discrete pages.  One should use pagination to make his/her website more efficient to use when working with a huge list of contents for example "List of 100 blog posts". Also, paginating the content helps websites from being overcrowded with the content and make visitors focus on small content at a time. This increases the readability and visitors are likely to return to your website again. 
+Pagination is the process of splitting the contents of a website, or a section of contents from a website, into discrete pages.  One should use pagination to make his/her website more efficient to use when working with a huge list of contents for example "List of 100 blog posts". Also, paginating the content helps websites from being overcrowded with the content and makes visitors focus on small content at a time. This increases the readability and visitors are likely to return to your website again. 
+
 ![Screenshot (63).png](https://cdn.hashnode.com/res/hashnode/image/upload/v1624461433050/LOAsFmeSk.png)
+
 Django has a pre-built class called "Paginator" to create and manage the paginated data. It can be imported by the following code.
 ```
 from django.core.paginator import Paginator
