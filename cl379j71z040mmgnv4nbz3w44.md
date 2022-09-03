@@ -19,7 +19,7 @@ We are going to create a Django application that displays the Images from the da
 - Cloudinary ```pip install cloudinary```
 - Create an account on [Cloudinary.com](https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/hhqbagkwhsnz7ca6jssy?t=default) and note down the cloud name, API key and API secret key. We will need these to integrate the Cloudinary account with our application.
 
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1652592860623/86I1gY1oa.png align="left")
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1652592860623/86I1gY1oa.png)
 
 ### Create a Django project
 
@@ -38,7 +38,7 @@ Now that the project is created open the directory with the project name using `
 >> python manage.py startapp gallery
 ```
 The project structure should look like this,
-![Django project structure](https://cdn.hashnode.com/res/hashnode/image/upload/v1652538535815/7j0xU7eES.png align="center")
+![Django project structure](https://cdn.hashnode.com/res/hashnode/image/upload/v1652538535815/7j0xU7eES.png )
 
 Add a new app to the INSTALLED_APP list in the settings.py file.
 ```
@@ -101,11 +101,11 @@ Run the following command to create a superuser. It will ask you for your userna
 ```
 After creating a superuser, you can run command ```python manage.py runserver```, access the admin panel at ```/admin``` and log in using these credentials.
 
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1652610699865/Q0_MshXcS.png align="left")
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1652610699865/Q0_MshXcS.png )
  
 Try to upload a few images and with successful submission of the form, you should see something like this.
 
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1652611233751/yfy3iM32j.png align="left")
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1652611233751/yfy3iM32j.png )
 
 You can see that the image is saved in link form and not the image directly. I will show you how to access this image in the template later in the tutorial.
 
@@ -212,7 +212,7 @@ When we created the PhotoList view, we passed an extra context ```photos``` whic
 
 After the photo gallery, we have a simple form to upload photos. And the final application looks like the following,
 
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1652613798537/RpQs4C9Hsx.png align="center")
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1652613798537/RpQs4C9Hsx.png )
 
 And that's it, but you can not and should not stop here especially if you are a beginner. Dig deeper, check out the Django documentation and add extra features and functionalities to your application. For example, you can add authentication required for forms to restrict others from uploading photos to your gallery. Check out the GitHub repository for the source code of this project.
 
@@ -220,7 +220,7 @@ And that's it, but you can not and should not stop here especially if you are a 
 
 As I said earlier, the main focus of this article was to know how cloudinary can help us manage image uploads efficiently, hassle-free and without much integration process. All we needed is credentials and a cloudinaryField. And the bonus is that Cloudinary not only delivers the images but at the same time optimizes them. Which helps your application load faster.
 
-I hope you found this article helpful. Please let me know if I did something wrong in this article or have any doubt regarding any step. I will be happy to help you with my knowledge and understanding.
+I hope you found this article helpful. Please let me know if I did something wrong in this article or have any doubts regarding any step. I will be happy to help you with my knowledge and understanding.
 
 Thanks for reading.🌻
 
