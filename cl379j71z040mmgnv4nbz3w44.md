@@ -38,6 +38,7 @@ Now that the project is created open the directory with the project name using `
 >> python manage.py startapp gallery
 ```
 The project structure should look like this,
+
 ![Django project structure](https://cdn.hashnode.com/res/hashnode/image/upload/v1652538535815/7j0xU7eES.png )
 
 Add a new app to the INSTALLED_APP list in the settings.py file.
