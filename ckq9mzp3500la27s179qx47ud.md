@@ -40,7 +40,8 @@ Currently, the ```HashnodeView``` and the ```hashnode_posts.html``` template dis
 Let's first import the ```Paginator``` using the following line of code.
 
 ```
-from django.core.paginator import Paginator```
+from django.core.paginator import Paginator
+```
 
 **In function-based views**, we need to specify the data and the number of items by which we want to paginate this data. For the ```HashnodeView``` we want to paginate the contents of ```posts``` by 9 items. Also, in the previous code, we returned the ```posts``` to the template but now we will need to return paginated data that is ```page_obj```. The final code will become,
 
